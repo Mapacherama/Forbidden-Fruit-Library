@@ -1,0 +1,96 @@
+<template>
+  <v-footer height="50" app class="elon-footer">
+    <div class="d-flex align-center mx-auto">
+      <v-icon class="icon-glow" size="24">mdi-rocket-launch</v-icon>
+      <span class="ml-2 text-subtitle-1">Made with ❤️ in Vue.js and Vuetify</span>
+      <v-icon class="icon-glow ml-2" size="24">mdi-lightning-bolt</v-icon>
+    </div>
+
+    <div class="social-links">
+      <a
+        v-for="item in items"
+        :key="item.title"
+        :href="item.href"
+        :title="item.title"
+        class="mx-3 social-link"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <v-icon
+          :icon="item.icon"
+          size="20"
+          class="social-icon"
+        />
+      </a>
+    </div>
+  </v-footer>
+</template>
+
+<script setup>
+const items = [
+  {
+    title: "Tesla",
+    icon: "mdi-car-electric",
+    href: "https://www.tesla.com/",
+  },
+  {
+    title: "SpaceX",
+    icon: "mdi-rocket",
+    href: "https://www.spacex.com/",
+  },
+  {
+    title: "Neuralink",
+    icon: "mdi-brain",
+    href: "https://neuralink.com/",
+  },
+  {
+    title: "Starlink",
+    icon: "mdi-satellite-variant",
+    href: "https://www.starlink.com/",
+  },
+  {
+    title: "Twitter (X)",
+    icon: "mdi-twitter",
+    href: "https://x.com/elonmusk",
+  },
+  {
+    title: "Boring Company",
+    icon: "mdi-drill",
+    href: "https://www.boringcompany.com/",
+  },
+];
+</script>
+
+<style scoped>
+.elon-footer
+  background: #000
+  color: white
+  display: flex
+  justify-content: space-between
+  padding: 10px 20px
+  position: relative
+
+.social-links
+  display: flex
+  align-items: center
+  position: absolute
+  right: 16px
+
+.social-link :deep(.v-icon)
+  color: #aaa
+  transition: transform 0.3s ease-in-out, color 0.2s ease-in-out
+
+  &:hover
+    color: #fff
+    transform: scale(1.3)
+
+.icon-glow
+  color: #0ff
+  animation: glow 1.5s infinite alternate
+
+@keyframes glow
+  from
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.7)
+  to
+    text-shadow: 0 0 15px rgba(0, 255, 255, 1)
+</style>
