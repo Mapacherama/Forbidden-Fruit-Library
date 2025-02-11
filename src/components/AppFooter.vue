@@ -62,35 +62,43 @@ const items = [
 </script>
 
 <style scoped>
-.elon-footer
-  background: #000
-  color: white
-  display: flex
-  justify-content: space-between
-  padding: 10px 20px
-  position: relative
+.elon-footer {
+  background: #000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: relative;
+}
 
-.social-links
-  display: flex
-  align-items: center
-  position: absolute
-  right: 16px
+.social-links {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 16px;
+}
 
-.social-link :deep(.v-icon)
-  color: #aaa
-  transition: transform 0.3s ease-in-out, color 0.2s ease-in-out
+.social-link .v-icon {
+  color: #aaa;
+  transition: transform 0.3s ease-in-out, color 0.2s ease-in-out;
+}
 
-  &:hover
-    color: #fff
-    transform: scale(1.3)
+.social-link .v-icon:hover {
+  color: #fff;
+  transform: scale(1.3);
+}
 
-.icon-glow
-  color: #0ff
-  animation: glow 1.5s infinite alternate
+.icon-glow {
+  color: #0ff;
+  animation: glow 1.5s infinite alternate;
+}
 
-@keyframes glow
-  from
-    text-shadow: 0 0 5px rgba(0, 255, 255, 0.7)
-  to
-    text-shadow: 0 0 15px rgba(0, 255, 255, 1)
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+  }
+  to {
+    text-shadow: 0 0 15px rgba(0, 255, 255, 1);
+  }
+}
 </style>
